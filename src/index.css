@@ -7,7 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li{
+  cursor: pointer;
+  list-style: none;
 }
+
+li.stripped {
+  text-decoration:line-through;
+}
+
