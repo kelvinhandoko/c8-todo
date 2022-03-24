@@ -1,9 +1,10 @@
+import { Button, TextField } from "@mui/material"
 import { useState } from "react"
 
 export default function TodoForm(props){
     const{add} = props
     const [input, setInput] = useState("")
-    
+
     const handleSubmit = e => {
         e.preventDefault()
         add(input)
@@ -14,14 +15,20 @@ export default function TodoForm(props){
     return (
         <>
         <form onSubmit={handleSubmit}>
-            <input 
+            <TextField
+            id="standard-search"
+            label="add your new task"
             type="text"
-            name="todo"
-            placeholder="add your new task"
-            value={input}
-            onChange={handleChange}
+            variant="standard" 
+            name="todo" 
+            value={input} 
+            onChange={handleChange} 
             />
-            <button>add todo</button>
+            <Button 
+                variant="outlined" 
+                style={{margin:"10px"}}   
+                type="submit">add todo</Button
+            >
         </form>
         </>
     )

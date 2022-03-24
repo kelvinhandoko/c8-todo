@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda&family=Montserrat&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Monda', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  
 }
 
 li{
@@ -12,7 +14,69 @@ li{
   list-style: none;
 }
 
-li.stripped {
+li.complete {
   text-decoration:line-through;
 }
+
+.todo{
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  text-align: center;
+  border: 1px solid black;
+  width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:100px;
+}
+
+
+
+.todo-title{
+  color:black;
+  text-align: center;
+ 
+}
+
+ul{
+  padding: 20px 20px;
+}
+
+.todo-list{
+  display: flex;
+  border: 2px solid black;
+  justify-content: space-between;
+  margin: 4px auto;
+  height:40px;
+  align-items:center;
+  border-radius:5px;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.todo-list-completed{
+  display: flex;
+  border: 2px solid black;
+  justify-content: space-between;
+  margin: 4px auto;
+  height:40px;
+  align-items:center;
+  border-radius:5px;
+  background-color: green;
+  cursor: pointer;
+  transition: 0.5s;
+  color:white;
+}
+
+.icon{
+  margin:20px;
+}
+
+.todo-row{
+  margin: 8px;
+}
+
+
+
 
