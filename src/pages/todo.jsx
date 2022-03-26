@@ -1,6 +1,7 @@
-import { Delete, Edit } from "@mui/icons-material";
+
 import { useState } from "react";
 import TodoForm from "../component/todoForm";
+import TodoList from "../component/todoList";
 
 export default function Todos() {
   const [todo, SetTodo] = useState([]);
@@ -24,37 +25,24 @@ export default function Todos() {
   const deleteTodo = (id) => {
     let delArr = todo.splice(id,1);
     SetTodo(delArr);
-    console.log(todo)
   };
 
+  const updateTodo = (id, value) => {
+    if(!value) return
+    SetTodo(e => e.map(item => item.id === id ? value : item))
+  }
  
   return (
     <>
       <div className="todo">
         <h1 className="todo-title">thing to do</h1>
         <TodoForm add={addTodo} />
-        <ul>
-          {todo.map((e, index) => {
-            return (
-              <div
-                className={e.complete ? "todo-list-completed" : "todo-list"}
-                onClick={() => handleComplete(e.id)}
-                key={index}
-              >
-                <li className="todo-row">
-                  {e.task}
-                </li>
-                <div className="icon">
-                  <Delete
-                    style={{ marginRight: "10px" }}
-                    onClick={() => deleteTodo(index)}   
-                  />
-                  <Edit />  
-                </div>
-              </div>
-            );
-          })}
-        </ul>
+        <TodoList 
+        todo={todo}
+        complete={handleComplete}
+        remove={deleteTodo}
+        update={updateTodo}
+        />
       </div>
     </>
   );
